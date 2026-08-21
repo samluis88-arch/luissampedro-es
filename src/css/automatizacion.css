@@ -1,0 +1,68 @@
+/* EJEMPLO FLOW */
+.flow-node {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 7px 14px;
+  font-size: 0.8rem; color: #374151; font-weight: 500;
+  white-space: nowrap;
+}
+.flow-arrow { color: var(--accent); font-size: 1rem; flex-shrink: 0; }
+
+.ejemplo-flow {
+  display: flex; align-items: center; gap: 6px;
+  flex-wrap: wrap; margin-bottom: 12px;
+}
+.ejemplo-flow .flow-node {
+  font-size: 0.72rem; padding: 4px 10px;
+  background: var(--accent-lt);
+  border-color: #A7CFCA; color: var(--accent-dk);
+}
+.ejemplo-flow .flow-arrow { font-size: 0.8rem; opacity: 0.5; }
+
+/* EJEMPLOS */
+.ejemplos-header {
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px; margin-top: 36px;
+}
+.ejemplos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 10px; }
+.ejemplo-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px 24px;
+}
+.ejemplo-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+.ejemplo-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.55; }
+.ejemplos-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 28px; }
+@media (max-width: 600px) {
+  .ejemplos-grid { grid-template-columns: 1fr; }
+}
+
+/* HERRAMIENTAS */
+.tools-wrap { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border); }
+.tools-label {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 14px;
+}
+.tools-strip { display: flex; flex-wrap: wrap; gap: 8px; }
+.tool-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1.5px solid color-mix(in srgb, var(--c) 30%, var(--border));
+  color: color-mix(in srgb, var(--c) 70%, #374151);
+  background: color-mix(in srgb, var(--c) 6%, #fff);
+  padding: 5px 13px; border-radius: 100px;
+  font-size: 0.8rem; font-weight: 600;
+}
+
+/* KEYWORDS STRIP */
+.keywords-strip { background: var(--text); padding: 14px 24px; }
+.kw-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap;
+}
+.kw-item {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase;
+  padding: 0 18px; white-space: nowrap;
+}
+.kw-item + .kw-item { border-left: 1px solid rgba(255,255,255,0.12); }
