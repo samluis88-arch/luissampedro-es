@@ -75,4 +75,15 @@
       });
     }, { threshold: 0.35 }).observe(leadCard);
   }
+
+  // WHATSAPP CLICK TRACKING
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+    link.addEventListener('click', () => {
+      gtag('event', 'whatsapp_click', {
+        link_url: link.href,
+        link_text: link.textContent.trim(),
+        transport_type: 'beacon'
+      });
+    });
+  });
 </script>
