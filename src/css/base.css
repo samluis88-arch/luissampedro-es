@@ -322,6 +322,9 @@ details[open] summary::after { transform: rotate(45deg); }
 .cta-final .cta-intro { color: var(--muted); max-width: 500px; margin: 0 auto 8px; font-size: 0.95rem; line-height: 1.65; }
 .cta-final .cta-main { color: var(--text); max-width: 500px; margin: 0 auto 32px; font-size: 1rem; font-weight: 500; line-height: 1.6; }
 .cta-fine { margin-top: 18px; font-size: 0.82rem; color: #9CA3AF; }
+.cta-alt { margin-top: 18px; font-size: 0.82rem; color: #9CA3AF; }
+.cta-alt a { color: #9CA3AF; text-decoration: underline; }
+.cta-alt a:hover { color: var(--muted); }
 
 /* FOOTER */
 footer {
