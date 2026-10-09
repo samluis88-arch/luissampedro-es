@@ -321,22 +321,22 @@ details[open] summary::after { transform: rotate(45deg); }
 .cta-final .sec-title { margin-bottom: 16px; }
 .cta-final .cta-intro { color: var(--muted); max-width: 500px; margin: 0 auto 8px; font-size: 0.95rem; line-height: 1.65; }
 .cta-final .cta-main { color: var(--text); max-width: 500px; margin: 0 auto 32px; font-size: 1rem; font-weight: 500; line-height: 1.6; }
-.cta-fine { margin-top: 18px; font-size: 0.82rem; color: #9CA3AF; }
-.cta-alt { margin-top: 18px; font-size: 0.82rem; color: #9CA3AF; }
-.cta-alt a { color: #9CA3AF; text-decoration: underline; }
-.cta-alt a:hover { color: var(--muted); }
+.cta-fine { margin-top: 18px; font-size: 0.82rem; color: var(--muted); }
+.cta-alt { margin-top: 18px; font-size: 0.82rem; color: var(--muted); }
+.cta-alt a { color: var(--muted); text-decoration: underline; }
+.cta-alt a:hover { color: var(--text); }
 
 /* FOOTER */
 footer {
   border-top: 1px solid var(--border);
   padding: 40px 24px; text-align: center;
-  font-size: 0.82rem; color: #9CA3AF;
+  font-size: 0.82rem; color: var(--muted);
 }
 footer a { color: inherit; text-decoration: none; }
-footer a:hover { color: var(--muted); }
+footer a:hover { color: var(--text); }
 .footer-name { font-weight: 600; color: var(--muted); margin-bottom: 10px; }
 .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 10px; }
-.footer-meta { color: #9CA3AF; }
+.footer-meta { color: var(--muted); }
 
 /* ANIMACIONES DE ENTRADA */
 @media (prefers-reduced-motion: no-preference) {
@@ -393,21 +393,17 @@ body::after {
 }
 
 /* FLOATING WHATSAPP */
-@keyframes pulse-wa {
-  0%, 100% { box-shadow: 0 6px 28px rgba(37,211,102,0.35); }
-  50% { box-shadow: 0 6px 28px rgba(37,211,102,0.35), 0 0 0 10px rgba(37,211,102,0); }
-}
 .wa-float {
   position: fixed; bottom: 28px; right: 28px; z-index: 1000;
   display: flex; align-items: center; gap: 10px;
-  background: #25D366; color: #fff;
+  background: #25D366; color: #111827;
   padding: 13px 20px 13px 16px; border-radius: 50px;
   text-decoration: none; font-size: 0.82rem; font-weight: 600;
-  animation: pulse-wa 2.5s ease infinite;
+  box-shadow: 0 6px 28px rgba(37,211,102,0.35);
   transition: transform 0.2s;
 }
 .wa-float:hover { transform: translateY(-2px); }
-.wa-float svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+.wa-float svg { width: 20px; height: 20px; fill: #111827; flex-shrink: 0; }
 .wa-float-label { line-height: 1.2; }
 .wa-float-label small { display: block; font-size: 0.68rem; font-weight: 400; opacity: 0.85; }
 @media (max-width: 600px) {
