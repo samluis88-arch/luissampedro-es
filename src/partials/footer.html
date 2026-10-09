@@ -29,11 +29,17 @@
   }, { passive: true });
 
   // HAMBURGER
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('navLinks').classList.toggle('open');
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
   });
   document.querySelectorAll('#navLinks .nav-link').forEach(link => {
-    link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
   });
 
   // CURSOR
