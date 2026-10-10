@@ -82,14 +82,15 @@
     }, { threshold: 0.35 }).observe(leadCard);
   }
 
-  // WHATSAPP CLICK TRACKING
+  // WHATSAPP CLICK TRACKING (Umami; no hace nada si Umami no está cargado)
   document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
     link.addEventListener('click', () => {
-      gtag('event', 'whatsapp_click', {
-        link_url: link.href,
-        link_text: link.textContent.trim(),
-        transport_type: 'beacon'
-      });
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track('whatsapp_click', {
+          link_url: link.href,
+          link_text: link.textContent.trim()
+        });
+      }
     });
   });
 </script>

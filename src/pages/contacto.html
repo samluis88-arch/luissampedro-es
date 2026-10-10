@@ -25,9 +25,6 @@
 <meta property="og:site_name" content="Luis Sampedro">
 
 <link rel="icon" href="/favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="stylesheet" href="/css/base.css">
 </head>
@@ -55,14 +52,15 @@
 <!-- INCLUDE:footer -->
 
 <script>
-  // EMAIL CLICK TRACKING
+  // EMAIL CLICK TRACKING (Umami; no hace nada si Umami no está cargado)
   document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', () => {
-      gtag('event', 'email_click', {
-        link_url: link.href,
-        link_text: link.textContent.trim(),
-        transport_type: 'beacon'
-      });
+      if (window.umami && typeof window.umami.track === 'function') {
+        window.umami.track('email_click', {
+          link_url: link.href,
+          link_text: link.textContent.trim()
+        });
+      }
     });
   });
 </script>
