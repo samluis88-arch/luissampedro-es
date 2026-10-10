@@ -5,7 +5,7 @@
     <a href="/webs">Webs</a>
     <a href="/contacto">Contacto</a>
   </div>
-  <p class="footer-meta">Algeciras · Campo de Gibraltar · © 2026</p>
+  <p class="footer-meta">Algeciras · Campo de Gibraltar · © 2026 · <a href="/aviso-legal">Aviso legal</a> · <a href="/privacidad">Privacidad</a></p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -88,7 +88,7 @@
       if (window.umami && typeof window.umami.track === 'function') {
         window.umami.track('whatsapp_click', {
           link_url: link.href,
-          link_text: link.textContent.trim()
+          link_text: link.textContent.trim().replace(/\s+/g, ' ')
         });
       }
     });
